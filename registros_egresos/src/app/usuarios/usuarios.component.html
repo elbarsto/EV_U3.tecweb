@@ -1,0 +1,57 @@
+<form (ngSubmit)="onSubmit()" #usersForm="ngForm" class="was-validated">
+  <h1>Ingresar Usuarios</h1>
+  
+  <!-- Campo de Nombre -->
+  <div class="mb-3">
+    <label for="nombre" class="form-label">Nombre:</label>
+    <input type="text" class="form-control is-valid" id="nombre" required [(ngModel)]="usuario.nombre" name="nombre">
+    <div class="invalid-feedback">
+      Inserte nombre
+    </div>
+  </div>
+  
+  <!-- Campo de Apellido -->
+  <div class="mb-3">
+    <label for="apellido" class="form-label">Apellido:</label>
+    <input type="text" class="form-control is-valid" id="apellido" required [(ngModel)]="usuario.apellido" name="apellido">
+    <div class="invalid-feedback">
+      Inserte apellido
+    </div>
+  </div>
+
+  <!-- Campo de Rut -->
+  <div class="mb-3">
+    <label for="rut" class="form-label">RUT:</label>
+    <input type="text" class="form-control is-valid" id="rut" required [(ngModel)]="usuario.rut" name="rut">
+    <div class="invalid-feedback">
+      Inserte RUT
+    </div>
+  </div>
+
+  <!-- Campo de Correo -->
+  <div class="mb-3">
+    <label for="correo" class="form-label">Correo:</label>
+    <input type="email" class="form-control is-valid" id="correo" required [(ngModel)]="usuario.correo" name="correo">
+    <div class="invalid-feedback">
+      Inserte correo válido
+    </div>
+  </div>
+
+  <!-- Campo de Contraseña -->
+  <div class="mb-3">
+    <label for="password" class="form-label">Contraseña:</label>
+    <input type="password" class="form-control is-valid" id="password" required [(ngModel)]="usuario.password" name="password">
+    <div class="invalid-feedback">
+      Inserte contraseña
+    </div>
+  </div>
+
+  <!-- Espacio para otros campos -->
+  <button type="submit" class="btn btn-success">Enviar</button>
+</form>
+
+<div class="mini-pantalla">
+  <h3>Último usuario ingresado:</h3>
+  <p *ngIf="usuarioIngresado.nombre">Nombre: {{ usuarioIngresado.nombre }}</p>
+  <!-- Mostrar otros datos del usuario si los hay -->
+</div>

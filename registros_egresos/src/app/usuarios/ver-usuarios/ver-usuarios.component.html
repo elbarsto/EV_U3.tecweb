@@ -1,0 +1,9 @@
+<div *ngIf="usuarios.length > 0">
+  <h2>Usuarios</h2>
+  <ul>
+    <li *ngFor="let usuario of usuarios">
+      Nombre: {{ usuario.nombre }}
+      <!-- Aquí puedes mostrar otros detalles del usuario si los hay -->
+    </li>
+  </ul>
+</div>
